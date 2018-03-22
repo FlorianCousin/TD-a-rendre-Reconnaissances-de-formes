@@ -5,14 +5,14 @@ clear all
 Max_x = 4;
 Min_x = -4;
 Pas = 0.01;
-x= [Min_x:Pas:Max_x];
+x = [Min_x:Pas:Max_x];
 L = length(x);
 
 % Considèrons que 2 classes sont modélisées par les densités de
 % probabilité gaussiennes suivantes :
 pxw1 = exp(-(x.*x))./sqrt(pi);
 mu2 = 1;
-sigma2 = sqrt(0.5); % ecart-type
+sigma2 = 1;%sqrt(0.5); % ecart-type
 pxw2 = exp(-(x-mu2).*(x-mu2)/(2*sigma2^2))./sqrt(2*pi*sigma2^2);
 
 %% 1. 1er cas:  Pw1=Pw2=0,5
@@ -63,6 +63,7 @@ title('Densités de probabilités des classes (1:rouge, 2:jaune)')
 % Prise en compte du numérateur uniquement
 ...
 
-% Observations / commentaires : 
+% 
+%Observations / commentaires : 
 ...
 
