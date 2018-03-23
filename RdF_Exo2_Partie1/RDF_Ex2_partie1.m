@@ -12,7 +12,7 @@ p=0.2 ;
 
 % Image de test
 %inputfile='George_W_Bush/George_W_Bush_0024.jpg';
-inputfile='George_W_Bush/George_W_Bush_0036.jpg';
+inputfile='George_W_Bush/George_W_Bush_0026.jpg';
 I_test=imread(inputfile);
 
 figure;imshow(I_test);
