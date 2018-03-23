@@ -49,7 +49,7 @@ Pw1 = 9/10;
 Pw2 = 1/10;
 
 %  Tracés des densités de probabilités des 2 classes
-figure(2) 
+figure(2)
 hold on
 plot(x,pxw1,'color','red')
 plot(x,pxw2,'color','blue')
@@ -65,10 +65,21 @@ plot(x, px, 'color', 'magenta');
 legend('p(x|w1)', 'p(x|w2)', 'P(w1|x)', 'P(w2|x)', 'p(x)');
     
 % Que devient le seuil optimal ? Pourquoi ?
-...
-    
+% parce que
+
 % Prise en compte du numérateur uniquement
-...
+Pw1x = pxw1 * Pw1;
+Pw2x = pxw2 * Pw2;
+
+figure(3)
+hold on
+plot(x,pxw1,'color','red')
+plot(x,pxw2,'color','blue')
+title('Densités de probabilités des classes (1:rouge, 2:jaune)')
+plot(x, Pw1x, 'color', 'green');
+plot(x, Pw2x, 'color', 'black');
+plot(x, px, 'color', 'magenta');
+legend('p(x|w1)', 'p(x|w2)', 'P(w1|x)', 'P(w2|x)', 'p(x)');
 
 % 
 %Observations / commentaires : 
