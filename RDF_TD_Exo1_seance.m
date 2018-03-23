@@ -52,7 +52,7 @@ Pw2 = 1/10;
 figure(2) 
 hold on
 plot(x,pxw1,'color','red')
-plot(x,pxw2,'color','yellow')
+plot(x,pxw2,'color','blue')
 title('Densités de probabilités des classes (1:rouge, 2:jaune)')
 
 %  Ajouter sur le même graphique les probabilités à posteriori
