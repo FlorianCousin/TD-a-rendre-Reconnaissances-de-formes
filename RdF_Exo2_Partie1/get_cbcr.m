@@ -12,3 +12,5 @@ cr = imycc(:,:,3);
 % filtrage 
 cb = filter2(lpf, cb);
 cr = filter2(lpf, cr);
+
+end
