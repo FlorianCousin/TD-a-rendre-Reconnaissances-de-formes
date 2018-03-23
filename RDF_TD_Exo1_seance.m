@@ -53,7 +53,7 @@ figure(2)
 hold on
 plot(x,pxw1,'color','red')
 plot(x,pxw2,'color','blue')
-title('Densités de probabilités des classes (1:rouge, 2:jaune)')
+title('Densités de probabilités des classes (1:rouge, 2:bleue)')
 
 %  Ajouter sur le même graphique les probabilités à posteriori
 px = pxw1 * Pw1 + pxw2 * Pw2;
@@ -65,7 +65,11 @@ plot(x, px, 'color', 'magenta');
 legend('p(x|w1)', 'p(x|w2)', 'P(w1|x)', 'P(w2|x)', 'p(x)');
     
 % Que devient le seuil optimal ? Pourquoi ?
-% parce que
+xb = 1.60;
+indices = find(x <= xb);
+M = length(indices);
+Perreur = Pas * sum(pxw2(indices) .* Pw2);
+Perreur = Perreur + Pas * sum(pxw1(indices(M) + 1:L) .* Pw1);
 
 % Prise en compte du numérateur uniquement
 Pw1x = pxw1 * Pw1;
