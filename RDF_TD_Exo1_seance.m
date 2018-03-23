@@ -1,6 +1,7 @@
 % TD Reconnaissance de Formes - Exercice 1
-close all
-clear all
+close all;
+clear all;
+clc;
 % Compléter les informations manquantes (notées ...)
 Max_x = 4;
 Min_x = -4;
@@ -12,7 +13,7 @@ L = length(x);
 % probabilité gaussiennes suivantes :
 pxw1 = exp(-(x.*x))./sqrt(pi);
 mu2 = 1;
-sigma2 = 1;%sqrt(0.5); % ecart-type
+sigma2 = sqrt(0.5); % ecart-type
 pxw2 = exp(-(x-mu2).*(x-mu2)/(2*sigma2^2))./sqrt(2*pi*sigma2^2);
 
 %% 1. 1er cas:  Pw1=Pw2=0,5
@@ -55,7 +56,13 @@ plot(x,pxw2,'color','yellow')
 title('Densités de probabilités des classes (1:rouge, 2:jaune)')
 
 %  Ajouter sur le même graphique les probabilités à posteriori
-...
+px = pxw1 * Pw1 + pxw2 * Pw2;
+Pw1x = pxw1 * Pw1 ./ px;
+Pw2x = pxw2 * Pw2 ./ px;
+plot(x, Pw1x, 'color', 'green');
+plot(x, Pw2x, 'color', 'black');
+plot(x, px, 'color', 'magenta');
+legend('p(x|w1)', 'p(x|w2)', 'P(w1|x)', 'P(w2|x)', 'p(x)');
     
 % Que devient le seuil optimal ? Pourquoi ?
 ...
