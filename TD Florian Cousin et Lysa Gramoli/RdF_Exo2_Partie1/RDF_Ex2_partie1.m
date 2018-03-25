@@ -1,6 +1,7 @@
 %% Partie 1 
 clear all;
 close all;
+clc;
 
 %% Apprentissage d'un modèle de peau
 database_dir='George_W_Bush';
@@ -11,8 +12,8 @@ p=0.2 ;
 
 % Image de test
 %inputfile='George_W_Bush/George_W_Bush_0024.jpg';
-inputfile='George_W_Bush/George_W_Bush_0036.jpg';
-I_test=get_CbCr(imread(inputfile));
+inputfile='George_W_Bush/George_W_Bush_0026.jpg';
+I_test=imread(inputfile);
 
 figure;imshow(I_test);
 imycbcr = rgb2ycbcr(I_test);
